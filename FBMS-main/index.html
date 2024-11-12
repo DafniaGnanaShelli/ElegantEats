@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEGANT EATS RESTAURANT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module">
+        let orderItems = [];
+        
+        function addToOrder(dishName, price) {
+            orderItems.push({ name: dishName, price: price });
+            console.log(`Order added: ${dishName} - $${price}`);
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const totalItems = orderItems.length;
+            const totalPrice = orderItems.reduce((sum, item) => sum + item.price, 0);
+
+            document.getElementById('total-items').textContent = totalItems;
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function finalizeOrder() {
+            console.log('Order finalized');
+            displayOrderInBilling();
+            orderItems = [];
+            updateOrderSummary();
+
+            // Smoothly scroll to the Billing section
+            window.location.hash = '#billing';
+            
+        }
+
+        function displayOrderInBilling() {
+            const billSummary = document.getElementById('bill-summary');
+            if (orderItems.length === 0) {
+                billSummary.innerHTML = '<p>No orders yet.</p>';
+                return;
+            }
+        else{
+            const orderList = orderItems.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join('');
+            const totalPrice = orderItems.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+
+            billSummary.innerHTML = `
+                <ul>${orderList}</ul>
+                <p>Total Price: $${totalPrice}</p>
+            `;
+        }
+    }
+        function processPayment() {
+            console.log('Payment processed');
+            document.getElementById('bill-summary').innerHTML = '<p>Thank you for your payment!</p>';
+        }
+    </script>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ELEGANT EATS</div>
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order-management">Order</a></li>
+            <li><a href="#reservation">Reservation</a></li>
+            <li><a href="#billing">Billing</a></li>
+            <li><a href="#crm">CRM</a></li>
+            <li><a href="#analytics">Analytics</a></li>  <!-- Updated link -->
+            <li><a href="#staffs">Staffs</a></li>        <!-- Updated link -->
+        </ul>
+        
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Elegant Eats</h1>
+        <p>Delicious food, outstanding service!</p>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        
+        <!-- Category Selection -->
+        <div class="category-select">
+            <label for="category">Select Category:</label>
+            <select id="category" onchange="filterMenu()">
+                <option value="all">All</option>
+                <option value="pizza">Pizza</option>
+                <option value="sandwiches">Sandwiches</option>
+                <option value="chicken">Chicken</option>
+                <option value ="Beverages">Beverages</option>
+            </select>
+        </div>
+    
+        <!-- Carousel Container -->
+        <div class="carousel-container">
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Pizza Items -->
+                
+                <div class="menu-item" data-category="pizza">
+                    <img src="chee.jpg" alt="Cheese Pizza">
+                    <h3>Cheese Pizza</h3>
+                    <p>Price: Rs 179</p>
+                    <button onclick="addToOrder('Cheese Pizza', 179)">Order</button>
+                </div>
+                <div class="menu-item" data-category="pizza">
+                    <img src="vps.jpg" alt="Veggie Pizza">
+                    <h3>Veggie Pizza</h3>
+                    <p>Price: Rs 169</p>
+                    <button onclick="addToOrder('Veggie Pizza', 169)">Order</button>
+                </div>
+                <div class="menu-item" data-category="pizza">
+                    <img src="mp.jpg" alt="Margherita">
+                    <h3>Margherita</h3>
+                    <p>Price: Rs 149</p>
+                    <button onclick="addToOrder('Margherita', 149)">Order</button>
+                </div>
+                <div class="menu-item" data-category="pizza">
+                    <img src="cbp.jpg" alt=" Chicken peri peri Loaded Pizza ">
+                    <h3>Chicken peri peri Loaded pizza</h3>
+                    <p>Price: Rs 159</p>
+                    <button onclick="addToOrder('Chicken peri peri Loaded pizza', 159)">Order</button>
+                </div>
+    
+                <!-- Sandwiches Items -->
+                <div class="menu-item" data-category="sandwiches">
+                    <img src="gs.jpg" alt="Grilled Sandwich">
+                    <h3>Grilled Sandwich</h3>
+                    <p>Price: Rs 80</p>
+                    <button onclick="addToOrder('Grilled Sandwich', 80)">Order</button>
+                </div>
+                <div class="menu-item" data-category="sandwiches">
+                    <img src="vs.jpg" alt="Veggie Sandwich">
+                    <h3>Veggie Sandwich</h3>
+                    <p>Price: Rs 90</p>
+                    <button onclick="addToOrder('Veggie Sandwich', 90)">Order</button>
+                </div>
+                <div class="menu-item" data-category="sandwiches">
+                    <img src="cs.jpg" alt="Chicken Sandwich">
+                    <h3>Chicken Cheese Sandwich</h3>
+                    <p>Price: Rs 100</p>
+                    <button onclick="addToOrder('Chicken Cheese Sandwich', 100)">Order</button>
+                </div>
+    
+                <!-- Chicken Items -->
+                <div class="menu-item" data-category="chicken">
+                    <img src="chicken-tikka.png" alt="Chicken Tandoori">
+                    <h3>Chicken Tandoori</h3>
+                    <p>Price: Rs 199</p>
+                    <button onclick="addToOrder('Chicken Tandoori', 199)">Order</button>
+                </div>
+                <div class="menu-item" data-category="chicken">
+                    <img src="chipop.jpg" alt="Chicken popcorn">
+                    <h3>Chicken popcorn</h3>
+                    <p>Price: Rs 160</p>
+                    <button onclick="addToOrder('Chicken popcorn ', 229)">Order</button>
+                </div>
+                <div class="menu-item" data-category="chicken">
+                    <img src="chicu.jpg" alt="Chicken Curry">
+                    <h3>Chicken Curry</h3>
+                    <p>Price: Rs 210</p>
+                    <button onclick="addToOrder('Chicken Curry', 210)">Order</button>
+                </div>
+                <div class="menu-item" data-category="chicken">
+                    <img src="chibi.jpg" alt="Chicken Biriyani">
+                    <h3>Chicken Briyani</h3>
+                    <p>Price: Rs 210</p>
+                    <button onclick="addToOrder('Chicken Biriyani', 210)">Order</button>
+                </div>
+                <div class="menu-item" data-category="Beverages">
+                    <img src="mojii.jpeg" alt="Mojito">
+                    <h3>Mojito</h3>
+                    <p>Price: Rs 110</p>
+                    <button onclick="addToOrder('Mojito', 110)">Order</button>
+                </div>
+                <div class="menu-item" data-category="Beverages">
+                    <img src="milkshake.jpg" alt="Milkshake">
+                    <h3>Milkshake</h3>
+                    <p>Price: Rs 180</p>
+                    <button onclick="addToOrder('Milkshake', 180)">Order</button>
+                </div>
+                <div class="menu-item" data-category="Beverages">
+                    <img src="boba.jpg" alt="Boba Tea">
+                    <h3>Boba Tea</h3>
+                    <p>Price: Rs 190</p>
+                    <button onclick="addToOrder('Boba Tea', 190)">Order</button>
+                </div>
+                <div class="menu-item" data-category="Beverages">
+                    <img src="https://t4.ftcdn.net/jpg/09/58/20/73/360_F_958207399_giHbFLE1tXmSlQrcUu25sklsLyFHC0GO.jpg" alt="Falooda">
+                    <h3>Falooda</h3>
+                    <p>Price: Rs 210</p>
+                    <button onclick="addToOrder('Falooda', 210)">Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    
+     <!-- Order Management Section -->
+     <section id="order-management" class="order-management">
+        <!-- Slogan -->
+        <div class="background-overlay"></div>
+        <h2 class="slogan">"Taste the joy in every bite..."</h2>
+    
+        <!-- Order List -->
+        <div id="order-list" class="order-list">
+            <p>No orders placed yet.</p>
+        </div>
+    
+        <!-- Order Summary -->
+        <div id="order-summary" class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-details">
+                <p>Total Items: <span id="total-items">0</span></p>
+                <p>Total Price: Rs <span id="total-price">0.00</span></p>
+            </div>
+            
+            <!-- Special Requests Section -->
+            <textarea id="special-request" placeholder="Any special requests?" rows="3"></textarea>
+            
+            <!-- Buttons -->
+            <button class="finalize-btn" onclick="finalizeOrder()">Finalize Order</button>
+        </div>
+    </section>
+    
+    
+    <!-- Reservation Section -->
+<section id="reservation">
+    <h2>"Dine without delay. Reserve today!"</h2>
+    <form id="reservation-form">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" required>
+        
+        <label for="party-size">Party Size:</label>
+        <input type="number" id="party_size" min="1" max="20" required>
+        
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contactNumber" placeholder="e.g., 123-456-7890" required>
+        
+        <button type="submit">Reserve a Table</button>
+    </form>
+</section>
+
+<!--billing section-->
+<section id="billing">
+    <h2>Billing</h2>
+    <div id="bill-summary">
+        <div class="order-item">
+            <span class="item-name">Item 1</span>
+            <span class="item-price">Rs 00.00</span>
+        </div>
+        <div class="order-item">
+            <span class="item-name">Item 2</span>
+            <span class="item-price">Rs 00.00</span>
+        </div>
+        <div class="order-item total">
+            <span class="item-name">Total</span>
+            <span class="item-price">Rs 00.00</span>
+        </div>
+        <p id="no-orders" style="display: none;">No orders yet.</p> <!-- Hide this by default -->
+    </div>
+    <button id="payment-button"class="payment-button" onclick="processPayment()">Process Payment</button>
+</section>
+
+
+    <!-- CRM Section -->
+    <section id="crm">
+        <h2>Customer Relationship Management (CRM)</h2>
+        <form id="feedback-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" required></textarea>
+            <center><button type="submit">Submit Feedback</button></center>
+        </form>
+    </section>
+
+    <!-- Analytics Section -->
+<section id="analytics">
+    <h2>Reporting & Analytics</h2>
+    <div>
+        <button onclick="generateReport()">Generate Sales Report</button>
+        <div id="report-output"></div>
+    </div>
+</section>
+ <!-- Staff Management Section -->
+ <section id="staffs">
+    <h2>Staff Management</h2>
+    <form id="staff-form">
+        <label for="staff-name">Staff Name:</label>
+        <input type="text" id="staff-name" required>
+        <label for="joining-date">Joining Date:</label>
+        <input type="date" id="joining-date" required>
+        <label for="job-role">Job Role:</label>
+        <input type="text" id="job-role" required>
+        <button type="button" onclick="addStaff()">Add Staff</button>
+    </form>
+
+    <div id="staff-list">
+        <h3>Current Staff</h3>
+        <ul>
+            <li>John Doe - Joined on: 2023-05-12, Job: Chef</li>
+            <li>Jane Smith - Joined on: 2023-06-20, Job: Manager</li>
+        </ul>
+    </div>
+</section>
+
+ <!-- Footer Section-->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Address: 123 Street Name, City, Country</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Email: info@yourwebsite.com</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Opening Hours</h3>
+            <p>Monday - Friday: 10:00 AM - 10:00 PM</p>
+            <p>Saturday - Sunday: 12:00 PM - 11:00 PM</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Twitter</a>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

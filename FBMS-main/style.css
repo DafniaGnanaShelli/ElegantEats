@@ -1,0 +1,813 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+}
+body {
+     /* Adjust based on the height of your navbar */
+    background-color: #ffbd44;
+}
+.section {
+    margin-bottom: 70px; /* Adjust this value as needed */
+  }
+
+/* Navbar Styles */
+.navbar {
+    background-color: #0A0A0A; /* Bright coral color */
+    padding: 15px 20px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left side */
+    width: 100%; /* Ensure it spans the entire width */
+    z-index: 1000; /* Ensure it stays on top of other content */
+ 
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffde59; /* Yellow for hover */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('resturant.png') center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Menu Section */
+.menu {
+    background-image:#0A0A0A; /* Soft gradient from warm yellow to soft beige */
+    padding: 20px;
+    min-height: 100vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+}
+
+.menu h2 {
+    margin-top: 40px;
+    font-family: 'Arial', sans-serif; /* Choose a clean, readable font */
+    font-size: 2rem;
+    color: #3e3e3e; /* Dark gray for text to contrast well against the gradient */
+    margin-bottom: 20px;
+}
+
+.category-select {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.category-select label {
+    font-size: 1.2rem;
+    color: #3e3e3e; /* Dark gray for the label */
+    margin-right: 10px;
+}
+
+.category-select select {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible grid layout */
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-item h3 {
+    font-size: 1.2rem;
+    color: #333; /* Darker text for better readability */
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #777; /* Lighter text color */
+    margin-bottom: 15px;
+}
+
+.menu-item button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #f8b400; /* Matching warm yellow */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #f1c27d; /* Lighter yellow on hover */
+}
+
+
+
+/* Reservation Section */
+#reservation {
+    background-image: url('reserpng.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    padding-top: 20px;
+    scroll-margin-top: 100px; /* Adjust to match header height */
+    text-align: center;
+    margin: 70px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Align with the width of other modules */
+}
+
+#reservation h2 {
+    font-size: 2rem;
+    
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto; /* Center the form horizontally */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+#reservation-form label {
+    font-weight: 600;
+    color: #37474f;
+    font-family: 'Roboto', sans-serif;
+}
+
+#reservation-form input[type="date"],
+#reservation-form input[type="time"],
+#reservation-form input[type="number"],
+#reservation-form input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+#reservation-form input:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+#reservation-form button {
+    background-color: #ffe489;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#reservation-form button:hover {
+    background-color: #ff7272;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    #reservation-section {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Billing Section Styles */
+#billing {
+    padding: 50px;
+    scroll-margin-top: 100px; /* Adjust to match header height */
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/hello-summer-fruit-cute-orange-watercolor-food-powerpoint-background_22341f6fe6__960_540.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    font-family: Arial, sans-serif; /* Font family */
+}
+
+#billing h2 {
+    color: #333; /* Darker color for the heading */
+    margin-bottom: 15px;
+    margin-top: 50px; /* Space below the heading */
+    text-align: center; /* Centered heading */
+    margin-top: 40px;
+}
+
+#bill-summary {
+    background-color: #fff; /* White background for summary */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the summary */
+    text-align: center; /* Centered text */
+    min-height: 50px; /* Minimum height */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+
+/* Payment button styles */
+.payment-button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 16px; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    display: block; /* Block level for centering */
+    margin: 20px auto; /* Center the button */
+    width: 200px; /* Fixed width */
+}
+
+.payment-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+
+/* Analytics Section Styling */
+/* Analytics Section Styling */
+#analytics {
+    scroll-margin-top: 100px; /* Adjust to match header height */
+    background-image: url('report.avif');
+    background-color: #f9f9fb;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Title Styling */
+#analytics h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+#analytics button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#analytics button:hover {
+    background-color: #45a049;
+}
+
+/* Report Output Styling */
+#report-output {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #666;
+    font-size: 1em;
+}
+
+/* Animation for the report output when content is added */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#report-output.show {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for the report output when content is added */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#report-output.show {
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* CRM Section Styling */
+#crm {
+    background-image: url('https://pngmagic.com/product_images/yellow-orange-background-for-instagram-stories-and-posts_3W2.jpeg');
+    border: 1px solid #e0e0e0;
+    padding: 50px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: left;
+    height: 400px;
+    scroll-margin-top: 100px; /* Adjust to match header height */
+    display: block;
+    margin: 20px auto; /* Center the button */
+
+}
+
+/* Title Styling */
+#crm h2 {
+    color: #333;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#feedback-form {
+    max-width: 500px;
+    display: contents;
+    flex-direction: column;
+}
+
+/* Label Styling */
+#feedback-form label {
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+/* Input and Textarea Styling */
+#feedback-form input[type="text"],
+#feedback-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical; /* Allows textarea resizing vertically only */
+}
+
+/* Button Styling */
+#feedback-form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; 
+}
+
+#feedback-form button:hover {
+    background-color: #45a049;
+}
+
+/* Focus Effect on Input Fields */
+#feedback-form input:focus,
+#feedback-form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(76, 175, 80, 0.5);
+}
+
+/* Order Management Section */
+#order-management {
+    background-image: url('order.jpg');
+    background-size: cover;
+    scroll-margin-top: 100px; /* Adjust to match header height */
+    padding: 50px;
+    background-color: #f8f8ff;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+
+#order-management h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#order-list {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+#order-list p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item h4 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.order-item .item-details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.order-item .remove-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-item .quantity-adjust {
+    display: flex;
+    align-items: center;
+}
+
+.order-item .quantity-adjust button {
+    background-color: #ffbd44;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-item .quantity-adjust input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* Order Summary Section */
+#order-summary {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#order-summary h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#order-summary .summary-details {
+    margin-bottom: 20px;
+}
+
+#order-summary p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+#special-request {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.finalize-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.finalize-btn:hover {
+    background-color: #218838;
+}
+/* Staff Management Section */
+#staffs {
+    padding: 30px;
+    background: linear-gradient(135deg, #f4f9f9, #e0f7fa);
+    background-image: url('https://img.freepik.com/premium-vector/cartoon-chef-with-food-drink-surrounding-him_1280751-70419.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto; /* Center the section */
+    font-family: 'Roboto', sans-serif;
+    scroll-margin-top: 100px; /* Adjust to match header height */
+}
+
+#staffs h2 {
+    color: #8d8b8b;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+/* Staff Form */
+#staff-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    animation: fadeIn 3s ease-out; /* Add fade-in animation */
+}
+
+#staff-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #37474f;
+}
+
+#staff-form input {
+    padding: 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    max-width: 100%;
+    color:transparent;
+}
+
+#staff-form input:focus {
+    border-color: #00796b;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(0, 121, 107, 0.2);
+}
+
+#staff-form button {
+    background-color: #00796b;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+#staff-form button:hover {
+    background-color: #004d40;
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Staff List Styling */
+#staff-list {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e0f2f1;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    animation: fadeIn 0.6s ease-out;
+}
+
+#staff-list h3 {
+    font-size: 24px;
+    color: #00796b;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
+
+#staff-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#staff-list ul li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#staff-list ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #f0fdfc; /* Lighten background on hover */
+}
+
+/* Staff Info and Role */
+.staff-info {
+    color: #455a64;
+    font-size: 16px;
+}
+
+.staff-info strong {
+    color: #00796b;
+}
+
+.staff-role {
+    background-color: #00796b;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/*footer*/
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f9a826;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+    font-size: 14px;
+    line-height: 24px;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #f9a826;
+    text-decoration: none;
+}
